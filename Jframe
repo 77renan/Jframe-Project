@@ -1,0 +1,348 @@
+package projetojava;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JMenuBar;
+import javax.swing.JMenu;
+import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
+import javax.swing.JSeparator;
+import javax.swing.KeyStroke;
+import java.awt.event.KeyEvent;
+import java.awt.event.InputEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.JTextField;
+import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JToolBar;
+import javax.swing.JTabbedPane;
+import javax.swing.JRadioButton;
+import java.awt.Color;
+import java.awt.SystemColor;
+import javax.swing.UIManager;
+import javax.swing.ButtonGroup;
+
+public class projetin2 extends JFrame {
+
+	private JPanel contentPane;
+	private JTextField txtRgm;
+	private JTextField txtNome;
+	private JTextField txtDatNasc;
+	private JTextField txtCpf;
+	private JTextField txtEmail;
+	private JTextField txtEnd;
+	private JTextField txtMunicipio;
+	private JTextField txtCelular;
+	private JTextField textField_8;
+	private JTextField txtFaltas;
+	private JTextField textField_10;
+	private JTextField textField_11;
+	private final ButtonGroup buttonGroup = new ButtonGroup();
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					projetin2 frame = new projetin2();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public projetin2() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 450, 300);
+		
+		JMenuBar menuBar = new JMenuBar();
+		setJMenuBar(menuBar);
+		
+		JMenu mnNewMenu = new JMenu("Aluno");
+		menuBar.add(mnNewMenu);
+		
+		JMenuItem mntmNewMenuItem = new JMenuItem("Salvar");
+		mntmNewMenuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S, InputEvent.CTRL_DOWN_MASK));
+		mnNewMenu.add(mntmNewMenuItem);
+		
+		JMenuItem mntmNewMenuItem_1 = new JMenuItem("Alterar");
+		mnNewMenu.add(mntmNewMenuItem_1);
+		
+		JMenuItem mntmNewMenuItem_2 = new JMenuItem("Consultar");
+		mnNewMenu.add(mntmNewMenuItem_2);
+		
+		JMenuItem mntmNewMenuItem_3 = new JMenuItem("Excluir");
+		mnNewMenu.add(mntmNewMenuItem_3);
+		
+		JSeparator separator = new JSeparator();
+		mnNewMenu.add(separator);
+		
+		JMenuItem mntmNewMenuItem_4 = new JMenuItem("Sair");
+		mntmNewMenuItem_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showMessageDialog(null, "Saindo do Sistema");
+				System.exit(0);
+			}
+		});
+		mntmNewMenuItem_4.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_R, InputEvent.SHIFT_DOWN_MASK));
+		mnNewMenu.add(mntmNewMenuItem_4);
+		
+		JMenu mnNewMenu_1 = new JMenu("Notas e Faltas");
+		menuBar.add(mnNewMenu_1);
+		
+		JMenuItem mntmNewMenuItem_5 = new JMenuItem("Salvar");
+		mnNewMenu_1.add(mntmNewMenuItem_5);
+		
+		JMenuItem mntmNewMenuItem_6 = new JMenuItem("Alterar");
+		mntmNewMenuItem_6.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_A, InputEvent.CTRL_DOWN_MASK));
+		mnNewMenu_1.add(mntmNewMenuItem_6);
+		
+		JMenuItem mntmNewMenuItem_7 = new JMenuItem("Excluir");
+		mnNewMenu_1.add(mntmNewMenuItem_7);
+		
+		JMenuItem mntmNewMenuItem_8 = new JMenuItem("Consultar");
+		mnNewMenu_1.add(mntmNewMenuItem_8);
+		
+		JMenu mnNewMenu_2 = new JMenu("Ajuda");
+		menuBar.add(mnNewMenu_2);
+		
+		JMenuItem mntmNewMenuItem_9 = new JMenuItem("Sobre");
+		mnNewMenu_2.add(mntmNewMenuItem_9);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
+		tabbedPane.setBounds(0, 33, 424, 206);
+		contentPane.add(tabbedPane);
+		
+		JPanel DadosPessoais = new JPanel();
+		tabbedPane.addTab("Dados Pessoais", null, DadosPessoais, null);
+		DadosPessoais.setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("RGM");
+		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblNewLabel.setBounds(10, 11, 28, 17);
+		DadosPessoais.add(lblNewLabel);
+		
+		JLabel lblNewLabel_1 = new JLabel("Nome");
+		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblNewLabel_1.setBounds(172, 11, 36, 17);
+		DadosPessoais.add(lblNewLabel_1);
+		
+		JLabel lblNewLabel_2 = new JLabel("Data de Nascimento");
+		lblNewLabel_2.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblNewLabel_2.setBounds(10, 44, 123, 17);
+		DadosPessoais.add(lblNewLabel_2);
+		
+		JLabel lblNewLabel_2_1 = new JLabel("Email");
+		lblNewLabel_2_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblNewLabel_2_1.setBounds(10, 72, 31, 17);
+		DadosPessoais.add(lblNewLabel_2_1);
+		
+		JLabel lblNewLabel_2_2 = new JLabel("End");
+		lblNewLabel_2_2.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblNewLabel_2_2.setBounds(10, 105, 24, 17);
+		DadosPessoais.add(lblNewLabel_2_2);
+		
+		JLabel lblNewLabel_2_3 = new JLabel("CPF");
+		lblNewLabel_2_3.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblNewLabel_2_3.setBounds(239, 44, 24, 17);
+		DadosPessoais.add(lblNewLabel_2_3);
+		
+		JLabel lblNewLabel_2_4 = new JLabel("Municipio");
+		lblNewLabel_2_4.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblNewLabel_2_4.setBounds(10, 133, 55, 17);
+		DadosPessoais.add(lblNewLabel_2_4);
+		
+		JLabel lblUf = new JLabel("UF");
+		lblUf.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblUf.setBounds(172, 133, 16, 17);
+		DadosPessoais.add(lblUf);
+		
+		JLabel lblNewLabel_3 = new JLabel("Celular");
+		lblNewLabel_3.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblNewLabel_3.setBounds(252, 133, 40, 17);
+		DadosPessoais.add(lblNewLabel_3);
+		
+		txtRgm = new JTextField();
+		txtRgm.setBounds(47, 11, 115, 20);
+		DadosPessoais.add(txtRgm);
+		txtRgm.setColumns(10);
+		
+		txtNome = new JTextField();
+		txtNome.setBounds(215, 11, 194, 20);
+		DadosPessoais.add(txtNome);
+		txtNome.setColumns(10);
+		
+		txtDatNasc = new JTextField();
+		txtDatNasc.setBounds(143, 44, 86, 20);
+		DadosPessoais.add(txtDatNasc);
+		txtDatNasc.setColumns(10);
+		
+		txtCpf = new JTextField();
+		txtCpf.setBounds(273, 44, 136, 20);
+		DadosPessoais.add(txtCpf);
+		txtCpf.setColumns(10);
+		
+		txtEmail = new JTextField();
+		txtEmail.setBounds(51, 72, 358, 20);
+		DadosPessoais.add(txtEmail);
+		txtEmail.setColumns(10);
+		
+		txtEnd = new JTextField();
+		txtEnd.setBounds(47, 105, 362, 20);
+		DadosPessoais.add(txtEnd);
+		txtEnd.setColumns(10);
+		
+		txtMunicipio = new JTextField();
+		txtMunicipio.setBounds(76, 133, 86, 20);
+		DadosPessoais.add(txtMunicipio);
+		txtMunicipio.setColumns(10);
+		
+		JComboBox cmbUf = new JComboBox();
+		cmbUf.setFont(new Font("Tahoma", Font.BOLD, 12));
+		cmbUf.setModel(new DefaultComboBoxModel(new String[] {"AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO"}));
+		cmbUf.setBounds(198, 133, 47, 20);
+		DadosPessoais.add(cmbUf);
+		
+		txtCelular = new JTextField();
+		txtCelular.setBounds(302, 133, 107, 20);
+		DadosPessoais.add(txtCelular);
+		txtCelular.setColumns(10);
+		
+		JPanel Curso = new JPanel();
+		tabbedPane.addTab("Curso", null, Curso, null);
+		Curso.setLayout(null);
+		
+		JLabel lblNewLabel_4 = new JLabel("Curso");
+		lblNewLabel_4.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblNewLabel_4.setBounds(10, 11, 37, 19);
+		Curso.add(lblNewLabel_4);
+		
+		JLabel lblNewLabel_5 = new JLabel("Campus");
+		lblNewLabel_5.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblNewLabel_5.setBounds(10, 54, 53, 19);
+		Curso.add(lblNewLabel_5);
+		
+		JLabel lblNewLabel_6 = new JLabel("Per\u00EDodo");
+		lblNewLabel_6.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblNewLabel_6.setBounds(10, 92, 47, 19);
+		Curso.add(lblNewLabel_6);
+		
+		JComboBox cmbCurso = new JComboBox();
+		cmbCurso.setFont(new Font("Tahoma", Font.BOLD, 12));
+		cmbCurso.setModel(new DefaultComboBoxModel(new String[] {"An\u00E1lise e Desenvolvimento de Sistemas", "Banco de Dados", "Ci\u00EAncias da Computa\u00E7\u00E3o", "Engenharia da Computa\u00E7\u00E3o", "Engenharia de Telecomunica\u00E7\u00F5es", "Gest\u00E3o da Tecnologia da Informa\u00E7\u00E3o", "Inform\u00E1tica", "Redes de Computadores"}));
+		cmbCurso.setBounds(71, 11, 338, 22);
+		Curso.add(cmbCurso);
+		
+		JComboBox cmbCampus = new JComboBox();
+		cmbCampus.setFont(new Font("Tahoma", Font.BOLD, 12));
+		cmbCampus.setModel(new DefaultComboBoxModel(new String[] {"Unicid Tatuap\u00E9", "Universidade de S\u00E3o Paulo (USP)", "Universidade Paulista (Unip)", "Universidade Presbiteriana Mackenzie", "Pontif\u00EDcia Universidade Cat\u00F3lica de S\u00E3o Paulo (PUC-SP)", "PUC-Campinas", "Universidade Estadual de Campinas (Unicamp)", "Universidade Federal de S\u00E3o Paulo (Unifesp)", "UNISANTOS"}));
+		cmbCampus.setBounds(73, 54, 336, 22);
+		Curso.add(cmbCampus);
+		
+		JRadioButton rdbMatutino = new JRadioButton("Matutino");
+		buttonGroup.add(rdbMatutino);
+		rdbMatutino.setBounds(86, 92, 89, 23);
+		Curso.add(rdbMatutino);
+		
+		JRadioButton rdbVespetino = new JRadioButton("Vespetino");
+		buttonGroup.add(rdbVespetino);
+		rdbVespetino.setBounds(177, 92, 89, 23);
+		Curso.add(rdbVespetino);
+		
+		JRadioButton rdbNoturno = new JRadioButton("Noturno");
+		buttonGroup.add(rdbNoturno);
+		rdbNoturno.setBounds(279, 92, 73, 23);
+		Curso.add(rdbNoturno);
+		
+		JPanel NotasFaltas = new JPanel();
+		tabbedPane.addTab("Notas e Faltas", null, NotasFaltas, null);
+		NotasFaltas.setLayout(null);
+		
+		JLabel lblNewLabel_7 = new JLabel("RGM");
+		lblNewLabel_7.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblNewLabel_7.setBounds(10, 11, 28, 17);
+		NotasFaltas.add(lblNewLabel_7);
+		
+		JLabel lblNewLabel_8 = new JLabel("Disciplina");
+		lblNewLabel_8.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblNewLabel_8.setBounds(10, 69, 54, 17);
+		NotasFaltas.add(lblNewLabel_8);
+		
+		JLabel lblNewLabel_9 = new JLabel("Semestre");
+		lblNewLabel_9.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblNewLabel_9.setBounds(10, 97, 57, 17);
+		NotasFaltas.add(lblNewLabel_9);
+		
+		JLabel lblNewLabel_10 = new JLabel("Notas");
+		lblNewLabel_10.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblNewLabel_10.setBounds(170, 97, 35, 17);
+		NotasFaltas.add(lblNewLabel_10);
+		
+		JLabel lblNewLabel_11 = new JLabel("Faltas");
+		lblNewLabel_11.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblNewLabel_11.setBounds(290, 97, 34, 17);
+		NotasFaltas.add(lblNewLabel_11);
+		
+		textField_8 = new JTextField();
+		textField_8.setBounds(48, 11, 112, 20);
+		NotasFaltas.add(textField_8);
+		textField_8.setColumns(10);
+		
+		JComboBox cmbDisciplina = new JComboBox();
+		cmbDisciplina.setFont(new Font("Tahoma", Font.BOLD, 12));
+		cmbDisciplina.setModel(new DefaultComboBoxModel(new String[] {"Programa\u00E7\u00E3o Orientada a Objetos"}));
+		cmbDisciplina.setBounds(74, 68, 335, 22);
+		NotasFaltas.add(cmbDisciplina);
+		
+		JComboBox cmbSemestre = new JComboBox();
+		cmbSemestre.setFont(new Font("Tahoma", Font.BOLD, 12));
+		cmbSemestre.setModel(new DefaultComboBoxModel(new String[] {"2021-1"}));
+		cmbSemestre.setBounds(74, 96, 86, 22);
+		NotasFaltas.add(cmbSemestre);
+		
+		JComboBox cmbNotas = new JComboBox();
+		cmbNotas.setFont(new Font("Tahoma", Font.BOLD, 12));
+		cmbNotas.setModel(new DefaultComboBoxModel(new String[] {"0,5"}));
+		cmbNotas.setBounds(209, 96, 71, 22);
+		NotasFaltas.add(cmbNotas);
+		
+		txtFaltas = new JTextField();
+		txtFaltas.setBounds(334, 97, 65, 20);
+		NotasFaltas.add(txtFaltas);
+		txtFaltas.setColumns(10);
+		
+		textField_10 = new JTextField();
+		textField_10.setBackground(SystemColor.control);
+		textField_10.setForeground(Color.BLACK);
+		textField_10.setBounds(167, 11, 242, 20);
+		NotasFaltas.add(textField_10);
+		textField_10.setColumns(10);
+		
+		textField_11 = new JTextField();
+		textField_11.setBackground(SystemColor.control);
+		textField_11.setBounds(10, 39, 399, 20);
+		NotasFaltas.add(textField_11);
+		textField_11.setColumns(10);
+		
+		JPanel Boletim = new JPanel();
+		tabbedPane.addTab("Boletim", null, Boletim, null);
+	}
+}
